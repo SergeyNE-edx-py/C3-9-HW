@@ -1,12 +1,12 @@
 // Input1 - сохранение в cookie, восстановление из cookie, очистка cookie
-let savedInput = getCookie("Input");
-let inputField = document.getElementById("Input");
+let savedInput = getCookie("Input1");
+let inputField = document.getElementById("Input1");
 let inputHelp = document.getElementById("InputHelp");
 let saveInputButton = document.getElementById("SaveInput");
 let clearCookieButton = document.getElementById("clearCookie");
 
 if (savedInput) {
-    inputField.value = document.getElementById("SaveInput");
+    inputField.value = savedInput;
 
     inputField.disabled = true;
     saveInputButton.disabled = true;
@@ -17,25 +17,25 @@ if (savedInput) {
 }
 
 saveInputButton.addEventListener('click', () => {
-    setCookie("Input", inputField.value, {'max-age': 60})
+    setCookie("Input1", inputField.value, {'max-age': 60})
 
     inputField.disabled = true;
     saveInputButton.disabled = true;
 
     inputHelp.innerHTML = "Указанный город будет храниться в cookie <strong>в течение 1 мин</strong>"           
 
-    console.log('Save Input:', getCookie("Input"));
+    console.log('Save Input:', getCookie("Input1"));
 })
 
 clearCookieButton.addEventListener('click', () => {
-    deleteCookie("Input");
+    deleteCookie("Input1");
 
     inputField.disabled = false;
     saveInputButton.disabled = false;
 
     inputHelp.innerHTML = "По нажатию кнопки  <strong>Сохранить</strong>, указанный город сохранится в cookie"           
 
-    console.log('Clear Cookie:', getCookie("Input"));
+    console.log('Clear Cookie:', getCookie("Input1"));
 })
 
 // возвращает куки с указанным name, или undefined, если ничего не найдено      

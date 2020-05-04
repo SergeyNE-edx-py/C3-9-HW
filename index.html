@@ -1,3 +1,14 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title>C3.9 HW cookie & storage</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Подключаем Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+</head>
 <!-- 
 1. Ваш город — Владивосток?
 Сделайте страницу с одним текстовым полем ввода. В него пользователь вводит название города (например, "Архангельск"), а результат сохраняется в cookie. При последующих входах на страницу вместо текстового поля ввода отображается соответствующая информация о пользователе "Ваш город — Архангельск" и дополнительно ссылка, позволяющая удалить эту информацию (и потом задать новую при следующем посещении ресурса).
@@ -11,16 +22,7 @@
 5) мне больше 12 лет;
 6) это задание выполнено правильно;
 -->
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="utf-8">
-    <title>C3.9 HW cookie & storage</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Подключаем Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-</head>
 <!-- шаблон отсюда: https://itchief.ru/examples/lab.php?topic=bootstrap&file=b4-create-tab -->
 <body class="p-5">
     <!-- Вкладки -->
@@ -38,11 +40,11 @@
     <div class="tab-content my-3">
     <div class="tab-pane fade show active" id="section-1" role="tabpanel" aria-labelledby="home-tab">
 
-        <h1>Ваш город ... </h1>
+        <h1>Ваш город Владивосток? ...  </h1>
 
         <div class="form-group">
-            <label for="Input">Ваш город:</label>
-            <input type="text" class="form-control" id="Input" aria-describedby="emailHelp" placeholder="...Владивосток?">
+            <label for="Input1">Ваш город:</label>
+            <input type="text" class="form-control" id="Input1" aria-describedby="emailHelp" placeholder="...?">
             <small id="InputHelp" class="form-text text-muted">По нажатию кнопки  <strong>Сохранить</strong>, указанный город сохранится в cookie</small>
         </div>
 
