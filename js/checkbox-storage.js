@@ -1,5 +1,5 @@
 // Checkboxes - сохранение в localStorage, восстановление из localStorage, очистка localStorage
-let savedChecks = localStorage.getItem('checks').split(",").map(e => e == 'false' ? false : true)
+let savedChecks = (localStorage.getItem('checks')).split(",").map(e => e == 'false' ? false : true)
 let checkBoxes = document.getElementsByClassName("form-check-input");
 let saveChecksButton = document.getElementById("SaveChecks");
 let clearStorageButton = document.getElementById("clearStorage");
