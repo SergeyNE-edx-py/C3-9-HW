@@ -1,0 +1,105 @@
+<!-- 
+1. Ваш город — Владивосток?
+Сделайте страницу с одним текстовым полем ввода. В него пользователь вводит название города (например, "Архангельск"), а результат сохраняется в cookie. При последующих входах на страницу вместо текстового поля ввода отображается соответствующая информация о пользователе "Ваш город — Архангельск" и дополнительно ссылка, позволяющая удалить эту информацию (и потом задать новую при следующем посещении ресурса).
+
+2. Галочки предпочтений
+На странице есть шесть галочек (checkbox) и кнопка "сохранить". Пользователь при посещении страницы может отметить их как угодно. Состояние галочек сохранится при последующих заходах на страницу, но при этом изменить их в последствии нельзя. Назовите галочки на своё усмотрение или воспользуйтесь следующими вариантами:
+1) не звонить мне;
+2) я прочитал и согласен с правилами пользования сервисом;
+3) я не выбираю эту галочку;
+4) я подтверждаю, что свобода в интернете — это возможность выбирать галочки;
+5) мне больше 12 лет;
+6) это задание выполнено правильно;
+-->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title>C3.9 HW cookie & storage</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Подключаем Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+</head>
+<!-- шаблон отсюда: https://itchief.ru/examples/lab.php?topic=bootstrap&file=b4-create-tab -->
+<body class="p-5">
+    <!-- Вкладки -->
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+    <li class="nav-item">
+        <a class="nav-link active" data-toggle="tab" href="#section-1" role="tab" aria-controls="section-1"
+        aria-selected="true">Input, cookie</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#section-2" role="tab" aria-controls="section-2"
+        aria-selected="false">Checkboxes, localStorage</a>
+    </li>
+    </ul>
+
+    <div class="tab-content my-3">
+    <div class="tab-pane fade show active" id="section-1" role="tabpanel" aria-labelledby="home-tab">
+
+        <h1>Ваш город ... </h1>
+
+        <div class="form-group">
+            <label for="Input">Ваш город:</label>
+            <input type="text" class="form-control" id="Input" aria-describedby="emailHelp" placeholder="...Владивосток?">
+            <small id="InputHelp" class="form-text text-muted">По нажатию кнопки  <strong>Сохранить</strong>, указанный город сохранится в cookie</small>
+        </div>
+
+        <button id="SaveInput" class="btn btn-primary">Сохранить</button>
+        <p></p>
+        <button id="clearCookie" class="btn">Очистить cookie</button>
+
+    </div>
+
+    <div class="tab-pane fade" id="section-2" role="tabpanel" aria-labelledby="profile-tab">
+
+        <h1>Галочки предпочтений ...</h1>
+
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="Check1">
+            <label class="form-check-label" for="Check1">не звонить мне</label>
+        </div>
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="Check2">
+            <label class="form-check-label" for="exampleCheck1">я прочитал и согласен с правилами пользования сервисом</label>
+        </div>
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="Check3">
+            <label class="form-check-label" for="exampleCheck1">я не выбираю эту галочку</label>
+        </div>
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="Check4">
+            <label class="form-check-label" for="Check4">я подтверждаю, что свобода в интернете — это возможность выбирать галочки</label>
+        </div>
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="Check5">
+            <label class="form-check-label" for="Check5">мне больше 12 лет</label>
+        </div>
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="Check6">
+            <label class="form-check-label" for="Check6">это задание выполнено правильно</label>
+        </div>
+
+        <p></p>
+        <button id="SaveChecks" class="btn btn-primary">Сохранить</button>
+
+        <p></p>
+        <button id="clearStorage" class="btn">Очистить storage</button>
+
+    </div>
+  
+    <!-- Подключаем jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      
+    <!-- Подключаем Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+    <!-- Input1 - сохранение в cookie, восстановление из cookie, очистка cookie  -->
+    <script src="./js/input-cookie.js"></script>  
+
+    <!-- Checkboxes - сохранение в localStorage, восстановление из localStorage, очистка localStorage  -->
+    <script src="./js/checkbox-storage.js"></script>  
+          
+</body>
+</html>
